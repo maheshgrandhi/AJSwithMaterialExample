@@ -14,7 +14,7 @@
 //;
 
 var myApp = angular.module('myApp',[]);
-myApp.controller("MainController", function($http){
+myApp.controller("MainController", function($scope,$http){
   var vm = this;
   vm.title = "Welcome to first example";
   vm.searchInput = "";
@@ -37,7 +37,10 @@ myApp.controller("MainController", function($http){
   vm.addShow = function() {
     vm.shows.push(vm.new);
     vm.new = {};
-    vm.addForm.$setPristine();
+    //$('#addTemplate input').removeClass('valid');
+    //$('#addTemplate label').removeClass('active');
+    //$scope.addForm.$setPristine();
+    $scope.addForm.reset();
   };
 
 });
