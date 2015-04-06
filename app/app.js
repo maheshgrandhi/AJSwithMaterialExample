@@ -37,6 +37,7 @@ myApp.controller("MainController", function($http){
   vm.addShow = function() {
     vm.shows.push(vm.new);
     vm.new = {};
+    vm.addForm.$setPristine();
   };
 
 });
