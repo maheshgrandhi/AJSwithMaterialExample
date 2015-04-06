@@ -28,9 +28,10 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
-  <script src="bower_components/angular-material/angular-material.js"></script>
+  <!--<script src="bower_components/angular-material/angular-material.js"></script>-->
   <script src="app.js"></script>
   <script src="src/directive/directive.js"></script>
+  <script src="src/directive/scrollOnClickDirective.js"></script>
 
 </head>
 <body ng-app="myApp" ng-controller="MainController as main">
@@ -57,7 +58,7 @@
 
     <div class="clearfix"></div>
     <h3>Add a new Serial</h3>
-    <form name="main.addForm" ng-submit="main.addShow()">
+    <form name="main.addForm" ng-submit="main.addShow()" id="addTemplate">
       <div class="row">
         <div class="input-field col s12">
           <input id="title" type="text" class="validate" ng-model="main.new.title" required>
@@ -72,15 +73,27 @@
       </div>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col l6">
           <input type="checkbox" id="favourite" ng-model="main.new.favourite" />
           <label for="favourite">Favourite</label>
         </div>
-        <div class="col-lg-6">
-          <button class="btn btn-success btn-lg waves-effect waves-light pull-right"><span class="mdi-content-add"></span> Add</button>
+        <div class="col l6">
+          <button class="btn btn-success btn-lg waves-effect waves-light right"><span class="mdi-content-add"></span> Add</button>
         </div>
       </div>
     </form>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+      <a class="btn-floating btn-large red" href="#addTemplate" scroll-on-click>
+        <i class="large mdi-content-add"></i>
+      </a>
+      <!--<ul>-->
+        <!--<li><a class="btn-floating red"><i class="large mdi-editor-insert-chart"></i></a></li>-->
+        <!--<li><a class="btn-floating yellow darken-1"><i class="large mdi-editor-format-quote"></i></a></li>-->
+        <!--<li><a class="btn-floating green"><i class="large mdi-editor-publish"></i></a></li>-->
+        <!--<li><a class="btn-floating blue"><i class="large mdi-editor-attach-file"></i></a></li>-->
+      <!--</ul>-->
+    </div>
 
   </div>
 </body>
